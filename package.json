@@ -1,0 +1,27 @@
+{
+  "name": "@fahrirusliyadi/vuejs-page-data",
+  "version": "0.0.0",
+  "description": "Share data across components",
+  "license": "MIT",
+  "repository": "https://github.com/fahrirusliyadi/vuejs-page-data",
+  "author": {
+    "name": "Fahri Rusliyadi",
+    "email": "fahri.rusliyadi@gmail.com",
+    "url": "https://fahri.my.id"
+  },
+  "main": "src/plugin.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "devDependencies": {
+    "ava": "^3.7.0",
+    "esm": "^3.2.25",
+    "xo": "^0.29.1"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.11"
+  },
+  "optionalDependencies": {
+    "proxy-polyfill": "^0.3.1"
+  }
+}
