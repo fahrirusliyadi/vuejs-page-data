@@ -40,6 +40,18 @@ test('merge', (t) => {
   t.is(pageData.get('c'), newData.c);
 });
 
+test('reset', (t) => {
+  const data = {
+    a: [{ b: 2 }, { d: 4 }],
+  };
+  const pageData = new PageData(data);
+
+  pageData.set('c', 5);
+  pageData.reset();
+  t.deepEqual(pageData._data, data);
+  t.is(pageData.c, undefined);
+});
+
 test('proxy', (t) => {
   const pageData = new PageData();
   const proxy = makeProxy(pageData);
