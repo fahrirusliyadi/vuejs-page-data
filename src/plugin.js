@@ -3,8 +3,8 @@ import { makeProxy } from './proxy';
 import { makeMixin } from './mixin';
 
 export default {
-  install(Vue) {
-    const pageData = new PageData();
+  install(Vue, options) {
+    const pageData = new PageData(options.initialData);
     const proxy = makeProxy(pageData);
     const mixin = makeMixin(pageData);
 
