@@ -1,7 +1,7 @@
 {
   "name": "@fahrirusliyadi/vuejs-page-data",
   "version": "0.0.0",
-  "description": "Share data across components",
+  "description": "Share data across Vue components",
   "license": "MIT",
   "repository": "https://github.com/fahrirusliyadi/vuejs-page-data",
   "author": {
