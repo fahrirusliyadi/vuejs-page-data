@@ -37,18 +37,7 @@ Share data across Vue components.
 
 # Usage
 
-Define page data globally. The data will be available on all pages.
-
-```js
-Vue.use(PageDataPlugin, {
-  initialData: {
-    // Your data.
-  },
-});
-```
-
-Define page data on any component. The data will be merged into the global data
-and will only available on the current page.
+Define page data on any component.
 
 ```js
 export default {
@@ -102,5 +91,4 @@ this.$pageData['a[0].b.c'] = 1;
 
 # Options
 
-- _{Object}_ `initialData`: Initial page data. The data will be available in all
-  pages.
+- _[Optional] {Object}_ `initialData`: Initial page data.

@@ -18,18 +18,5 @@ export function makeMixin(pageData) {
         });
       }
     },
-    beforeMount() {
-      // Skip if not root component.
-      if (!this.$parent) {
-        // Reset page data to initial state when changing route.
-        this.$router.beforeEach((to, from, next) => {
-          if (to.name !== from.name) {
-            this.$pageData.reset();
-          }
-
-          next();
-        });
-      }
-    },
   };
 }

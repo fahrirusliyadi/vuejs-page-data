@@ -2,19 +2,16 @@ import Vue from 'vue';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import isObject from 'lodash/isObject';
-import union from 'lodash/union';
 import _castPath from 'lodash/_castPath';
 import _isIndex from 'lodash/_isIndex';
 
 export default class PageData {
   /**
-   * @param {Object} data Initial page data.
+   * @param {Object} initialData Initial data.
    */
-  constructor(data = {}) {
-    this._initialData = data;
-    this._data = Vue.observable(cloneDeep(data));
-
-    this.reset();
+  constructor(initialData = {}) {
+    this._initialData = initialData;
+    this._data = Vue.observable(cloneDeep(initialData));
   }
 
   /**
@@ -59,21 +56,6 @@ export default class PageData {
    */
   merge(data) {
     this._merge(this._data, data);
-  }
-
-  /**
-   * Reset data.
-   */
-  reset() {
-    const keys = union(Object.keys(this._initialData), Object.keys(this._data));
-
-    for (const key of keys) {
-      if (key in this._initialData) {
-        Vue.set(this._data, key, this._initialData[key]);
-      } else {
-        delete this._data[key];
-      }
-    }
   }
 
   /**
